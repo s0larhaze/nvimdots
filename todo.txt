@@ -1,0 +1,5 @@
+TODO migration to Neovim
+- [x] Base configure, keymaps
+- [x] Configure plugins with plugin manager (lazy.nvim)
+- [ ] Configure LSP for Java
+- [ ] Debugging for Java
