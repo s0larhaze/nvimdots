@@ -78,3 +78,5 @@ vim.g.editorconfig = true
 
 -- Set a shared clipboard buffer
 -- vim.opt.clipboard = "xclip"
+--
+vim.opt.clipboard = "unnamedplus"

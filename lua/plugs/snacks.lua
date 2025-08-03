@@ -46,6 +46,16 @@ return (
             end,
             desc = "Snacks explorer"
             },
+            { "<leader>sf", function ()
+                Snacks.picker.files()
+            end,
+            desc = "Search files"
+            },
+            { "<leader>sc", function ()
+                Snacks.picker.files({ cwd = vim.fn.stdpath("config") })
+            end,
+            desc = "Search config"
+            },
         }
     }
 )
