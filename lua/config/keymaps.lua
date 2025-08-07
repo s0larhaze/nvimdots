@@ -52,3 +52,6 @@ vim.keymap.set("n", "<leader>ccd", function ()
     vim.cmd("cd %:h")
     vim.notify("Changed cwd to the current file's directory", "info")
 end)
+
+-- lsp definition
+vim.keymap.set("n", "grd", vim.lsp.buf.declaration, { buffer = bufnr, desc = "Go to Definition" })

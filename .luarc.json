@@ -1,6 +1,7 @@
 {
     "diagnostics.globals": [
         "retunr",
-        "local"
+        "local",
+        "vim"
     ]
 }

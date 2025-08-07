@@ -1,7 +1,22 @@
-return(
+return {
+    {
+        "ribru17/bamboo.nvim",
+        name = "bamboo",
+        lazy = false,
+        priority = 1001,
+        config = function ()
+            require("bamboo").setup({
+                style = "multiplex",
+                -- transparent = true,
+                -- term_colors = true,
+            })
+            require("bamboo").load()
+        end
+    },
     {
         "catppuccin/nvim",
         name = "catppuccin",
-        priority = 1000
-    }
-)
+        lazy = false,
+        priority = 1000,
+    },
+}

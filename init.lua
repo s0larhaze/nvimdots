@@ -2,7 +2,7 @@ require("config")
 require("lazy.lazy")
 
 -- Colorscheme
-vim.cmd.colorscheme "catppuccin-mocha"
+-- vim.cmd.colorscheme "catppuccin-mocha"
 
 
 

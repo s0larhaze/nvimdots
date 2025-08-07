@@ -8,6 +8,7 @@
 
 -- In insert mode the cursor would be ▮ instead of |
 vim.opt.guicursor = ""
+-- vim.opt.guicursor=
 
 -- Display the line number on the left
 vim.opt.nu = true
@@ -80,3 +81,5 @@ vim.g.editorconfig = true
 -- vim.opt.clipboard = "xclip"
 --
 vim.opt.clipboard = "unnamedplus"
+
+-- vim.o.termsync = false
