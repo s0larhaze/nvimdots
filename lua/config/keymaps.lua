@@ -10,8 +10,8 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move down selected lines"
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move up selected lines" })
 
 -- Shifts
-vim.keymap.set("v", ">", ">gv", { desc = "Move selected lines to the right indefinetely"})
-vim.keymap.set("v", "<", "<gv", { desc = "Move selected lines to the left indefinetely"})
+vim.keymap.set("v", ">", ">gv", { desc = "Move selected lines to the right indefinetely" })
+vim.keymap.set("v", "<", "<gv", { desc = "Move selected lines to the left indefinetely" })
 
 -- Ctrl+c actions
 vim.keymap.set("i", "<C-c>", "<Esc>", { desc = "Exit insertion mode" })
@@ -21,7 +21,8 @@ vim.keymap.set("n", "<C-c>", ":nohl<CR>", { desc = "Clear search highlight", sil
 vim.keymap.set("n", "Q", "<nop>")
 
 -- Replace all instances of the word under the cursor
-vim.keymap.set("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Replace all instances of the word under the cursor" })
+vim.keymap.set("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+    { desc = "Replace all instances of the word under the cursor" })
 
 -- Open ToggleTerm
 vim.keymap.set("n", "<leader>tt", ":ToggleTerm<CR>", { desc = "Open ToggleTerm" })
@@ -38,7 +39,7 @@ vim.keymap.set("n", "<leader>:", ":FineCmdline<CR>", { desc = "Open FineCmdLine"
 -- Neotree Open/Close
 -- vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>", { desc = "Open/Close Neotree", silent = true })
 
-vim.keymap.set("n", "<leader>f", function()vim.lsp.buf.format({ async = false })end, { desc = "LSP format" })
+vim.keymap.set("n", "<leader>f", function() vim.lsp.buf.format({ async = false }) end, { desc = "LSP format" })
 
 -- Doesn't seem to work
 -- -- Redefine Control-c as escape.
@@ -46,7 +47,7 @@ vim.keymap.set("n", "<leader>f", function()vim.lsp.buf.format({ async = false })
 --
 
 -- Change the directory to the current file's directory
-vim.keymap.set("n", "<leader>ccd", function ()
+vim.keymap.set("n", "<leader>ccd", function()
     -- local full_path = vim.api.nvim_bf_get_name(0)
     -- local directory = vim.fn.fnamemodify(full_path, ":h")
     vim.cmd("cd %:h")
@@ -55,3 +56,19 @@ end)
 
 -- lsp definition
 vim.keymap.set("n", "grd", vim.lsp.buf.declaration, { buffer = bufnr, desc = "Go to Definition" })
+
+
+-- Open the DAP UI
+vim.keymap.set("n", "<leader>uio", function()
+    require("dapui").open()
+end, { desc = "Open the DAP UI." })
+
+-- Close the DAP UI
+vim.keymap.set("n", "<leader>uic", function()
+    require("dapui").close()
+end, { desc = "Close the DAP UI." })
+
+-- Toggle the DAP UI with reset
+vim.keymap.set("n", "<leader>uir", function()
+    require("dapui").toggle({ reset = true })
+end, { desc = "Toggle the DAP UI with reset." })

@@ -1,6 +1,3 @@
-
-
-
 --
 -- Use ':so' or ':source %' to reload the config
 --
@@ -69,7 +66,7 @@ vim.opt.signcolumn = "yes"
 -- start - permits backspacing past the position where [I]nsert mode was initiated
 -- eol - enables backspacing over end-of-line characters.
 -- indent - allow backspacing over automatic indentation. Without this autoindent's indentations are not deletable.
-vim.opt.backspace = {"start", "eol", "indent"}
+vim.opt.backspace = { "start", "eol", "indent" }
 
 -- Enable mouse in all modes
 vim.opt.mouse = "a"
@@ -83,3 +80,13 @@ vim.g.editorconfig = true
 vim.opt.clipboard = "unnamedplus"
 
 -- vim.o.termsync = false
+
+
+-- Python LSP
+vim.lsp.handlers["textDocument/publishDiagnostics"] =
+    vim.lsp.with(
+        vim.lsp.diagnostic.on_publish_diagnostics,
+        {
+            update_in_insert = false
+        }
+    )

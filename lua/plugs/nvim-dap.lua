@@ -50,7 +50,11 @@ return (
                     name = "Launch debug",
                     type = "codelldb",
                     request = "launch",
-                    program = '${workspaceFolder}/main',
+                    -- program = '${workspaceFolder}/main',
+                    program = function()
+                        -- return "${workspaceFolder}/" .. vim.fn.input({ prompt = "Enter the file to debug: ", default = vim.fn.getcwd() .. "/" })
+                        return "${workspaceFolder}/" .. vim.fn.input({ prompt = "Enter the file to debug: " })
+                    end,
                     cwd = '${workspaceFolder}',
                     stopOnEntry = true,
                     args = {},
